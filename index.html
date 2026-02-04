@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aadya 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:cursive;
+  background:#ffe6ee;
+  overflow:hidden;
+}
+.screen{
+  width:100vw;height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.hidden{display:none;}
+
+.heart{
+  position:fixed;
+  color:pink;
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  from{top:-10%;}
+  to{top:110%;}
+}
+
+.teddy{font-size:90px;}
+
+.envelopeWrap{position:relative;}
+.envelope{font-size:70px;cursor:pointer;}
+
+.card{
+  background:#fff7e6;
+  border-radius:12px;
+  padding:18px;
+  width:260px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.slideCard{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  animation:slideOut 1.2s ease forwards;
+}
+@keyframes slideOut{
+  from{transform:translate(-50%,40px);opacity:0;}
+  to{transform:translate(-50%,-120px);opacity:1;}
+}
+
+button{
+  padding:8px 18px;
+  border:none;
+  border-radius:20px;
+  margin:10px;
+  font-size:16px;
+}
+#yes{background:#ff5c8a;color:white;}
+#no{background:#ddd;position:absolute;}
+
+.arrow{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  font-size:34px;
+  color:#ff5c8a;
+  cursor:pointer;
+  animation:
+    arrowFloat 2.5s ease-in-out infinite,
+    arrowBlink 2s ease-in-out infinite;
+}
+@keyframes arrowFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+@keyframes arrowBlink{
+  0%,100%{ opacity:1; }
+  50%{ opacity:0.4; }
+}
+
+/* Flip cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.flip{
+  width:140px;height:90px;
+  perspective:800px;
+}
+.flipInner{
+  width:100%;height:100%;
+  transition:transform 0.7s;
+  transform-style:preserve-3d;
+}
+.flip:active .flipInner{
+  transform:rotateY(180deg);
+}
+.face{
+  position:absolute;
+  width:100%;height:100%;
+  backface-visibility:hidden;
+  background:#fff0f5;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px;
+}
+.back{
+  transform:rotateY(180deg);
+  background:#ffe4b5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEARTS -->
+<script>
+for(let i=0;i<25;i++){
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<!-- SCREEN 1 -->
+<div class="screen" id="s1">
+  <div class="teddy">🧸</div>
+
+  <div class="envelopeWrap" onclick="openEnvelope()">
+    <div class="envelope">✉️</div>
+
+    <div class="card slideCard" id="slideCard">
+      <h3>Will you be my Valentine? 💕</h3>
+      <button id="yes" onclick="yes()">YES</button>
+      <button id="no" onmouseover="moveNo()">NO</button>
+    </div>
+  </div>
+
+  <p>Tap gently 💗</p>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen hidden" id="s2">
+  <div class="card">
+    <h3>Dear Aadya 💖</h3>
+    <p>
+       <b>hey baby !!
+      I know we are already together but still i wanna ask you 
+      WILL YOU BE MY VALENTINE ❤️ !! please 
+      See you don't have an option right now pleasee.....🙏🏻🙏🏻🙏🏻
+      I love you very much my sweet heart darling it is just a 
+      small effort from my side and remember I am always with you
+      no matter what what the circumstances are, you make my day 
+      like nothing else just a small glimpse of yours is enough 
+      to make me feel happy and to stay blushing all day , 
+      the eyes you carry is just something amazing that can't be 
+      resisted even if I want to although I love being addicted to them.
+      </b>  
+      <br><br>
+      With love,  
+      <br>Your Bandar 💌
+    </p>
+  </div>
+  <div class="arrow" onclick="next()">➜</div>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen hidden" id="s3">
+  <h3>Just some truths 😉</h3>
+  <div class="grid">
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">Your eyes? Dangerous 
+      I love being lost into them😌</div>
+    </div></div>
+
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">Those rosy lips steal focus 💋</div>
+    </div></div>
+
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">Cute cheeks, zero defence😍
+      hard to control me 😋</div>
+    </div></div>
+
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">Hair that wins every battle ✨</div>
+    </div></div>
+
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">cutie + hot = unfair totally 
+      its illegal 🔥</div>
+    </div></div>
+
+    <div class="flip"><div class="flipInner">
+      <div class="face">Tap 💌</div>
+      <div class="face back">you make my everyday special💖</div>
+    </div></div>
+  </div>
+</div>
+
+<script>
+function openEnvelope(){
+  document.getElementById("slideCard").style.display="block";
+}
+function moveNo(){
+  let b=document.getElementById("no");
+  b.style.left=Math.random()*200+"px";
+  b.style.top=Math.random()*80+"px";
+}
+function yes(){
+  s1.classList.add("hidden");
+  s2.classList.remove("hidden");
+}
+function next(){
+  s2.classList.add("hidden");
+  s3.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
